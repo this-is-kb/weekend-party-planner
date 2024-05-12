@@ -2,11 +2,18 @@ budget = { 'food': 0.0,
           'drinks': 0.0
 }
 
+print("Let's start the party tonight")
+initial_budget = float(input("What is your budget: "))
+
 def print_all():
     print(f"Total Budget: {budget}")
     print("Expenses:")
     for key, value in budget.items():
         print(f"{key}=={value}")
+    expenses = sum(budget.values())
+    balance_amount = initial_budget - expenses
+    print(f"Total expenses = {expenses}")
+    print(f"The remaining amount = {balance_amount}")
 
 def add_expense():
     e1 = input("Enter the expense details (food, drinks etc.): ")
@@ -30,10 +37,6 @@ def remove_expense():
 
 
 def main():
-    print("Let's start the party tonight")
-    initial_budget = float(input("What is your budget: "))
-    budget = initial_budget
-    expenses = []
 
     while True:
         print("\n Let's the expense begin")

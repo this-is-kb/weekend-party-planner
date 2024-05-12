@@ -11,7 +11,7 @@ def print_all():
 def add_expense():
     e1 = input("Enter the expense details (food, drinks etc.): ")
     a1 = float(input("Enter the amount: "))
-    for e1 in budget.keys():
+    if e1 in budget.keys():
         print("Updating budget")
         a1 += budget[e1]
         budget.update({e1:a1})
@@ -32,8 +32,6 @@ def remove_expense():
 def main():
     print("Let's start the party tonight")
     initial_budget = float(input("What is your budget: "))
-    # filepath = 'budget_data.json'  # Define the path to your JSON file
-    # initial_budget, expenses = load_budget_data(filepath)
     budget = initial_budget
     expenses = []
 
